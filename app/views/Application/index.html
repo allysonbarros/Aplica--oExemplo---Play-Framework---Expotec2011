@@ -1,0 +1,41 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{set 'moreScripts'}
+    <script type="text/javascript">
+		$(document).ready(function(){
+			$(".topbar .nav li:eq(0)").addClass("active");
+		});
+    </script>
+#{/set}
+
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+  <h1>Expotec 2011!</h1>
+  <p>A Exposição Científica, Tecnológica e Cultural do Campus Natal-Central do Instituto Federal do RN - EXPOTEC - é um evento anual com caráter de divulgação científica, promovido pela Pró-Reitoria de Extensão, assessorada pele Divisão de Extensão do campus.</p>
+  <p><a href="http://portal.ifrn.edu.br/natalcentral/expotec" class="btn primary large">Mais Informações &raquo;</a></p>
+</div>
+
+<div class="page-header">
+	<h1>	
+		Palestras e Minicursos
+		<small>(DIATINF - Diretoria de Gestão e Tecnologia da Informação)</small>
+	</h1>
+</div>
+
+<div class="row">
+	#{ifnot atividades.isEmpty()}
+		#{list atividades, as:'atividade'}
+		<div class="span16">
+           <h2>${atividade.titulo}</h2>
+           <p>${atividade.descricao}</p>
+		   <p><a class="btn" href="#">Ver Detalhes &raquo;</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" class="btn primary">Inscrever-se!</a></p>
+         </div>
+		#{/list}
+	#{/ifnot}
+	#{else}
+		<div class="span16">
+          <p>Nenhuma atividade cadastrada.</p>
+        </div>
+	#{/else}
+</div>

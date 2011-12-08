@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta charset="${_response_encoding}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap.css'}"> 
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+        #{get 'moreStyles' /}
+        <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        #{get 'moreScripts' /}
+        
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	    <!--[if lt IE 9]>
+	      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+	
+	    <!-- Le styles -->
+	    <style type="text/css">
+	      body {
+	        padding-top: 60px;
+	      }
+	    </style>        
+    </head>
+    <body>
+    	<div class="topbar">
+	      <div class="fill">
+	        <div class="container-fluid">
+	          <a class="brand" href="#">Play Framework! - Expotec 2011</a>
+	          <ul class="nav">
+	            <li><a href="@{Application.index}">Página Principal</a></li>
+	            <li><a href="http://grupoweblovers.org/quem-somos/">Sobre os WebLovers</a></li>
+	            <li><a href="https://github.com/allysonbarros/Aplica--oExemplo---Play-Framework---Expotec2011">Ver o Código Fonte</a></li>
+	          </ul>
+	          <p class="pull-right">
+				<a href="#">[ Fazer Login ]</a>
+			  </p>
+	        </div>
+	      </div>
+	    </div>
+	    
+	    <div class="container-fluid">
+			<div class="sidebar">
+				<div class="well">
+				  <h5><a href="@{Application.index}">Página Principal</a></h5>
+		          <h5>Atividades</h5>
+		          <ul>
+		          	#{list tipoAtividades, as: 'tipoAtividade'}
+		          		<li><a href="#">${tipoAtividade.titulo}</a></li>
+		          	#{/list}
+		          </ul>
+
+		          <h5><a href="#">Programação Cultural</a></h5>		         
+		          <h5><a href="#">Competições</a></h5>
+		          
+		        </div>
+			</div>
+			
+			<div class="content">
+				#{doLayout /}
+			</div>
+		</div>
+		
+        <footer class="footer">
+	      <div class="container">
+	        <p class="pull-right"><a href="#">Back to top</a></p>
+	        <p>
+	          Designed and built with all the love in the world <a target="_blank" href="http://twitter.com/twitter">@twitter</a> by <a target="_blank" href="http://twitter.com/mdo">@mdo</a> and <a target="_blank" href="http://twitter.com/fat">@fat</a>.<br>
+	          Code licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+	        </p>
+	      </div>
+	    </footer>
+        
+    </body>
+</html>
