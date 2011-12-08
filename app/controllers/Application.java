@@ -15,9 +15,4 @@ public class Application extends Controller {
         render(tipoAtividades, atividades);
     }
     
-    public static void visualizarAtividade(Long id) {
-    	List<TipoAtividade> tipoAtividades = TipoAtividade.findAll();
-    	Atividade atividade = TipoAtividade.findById(id);
-    	render(tipoAtividades, atividade);
-    }
 }
